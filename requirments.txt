@@ -1,0 +1,17 @@
+The following libraries are imported and used throughout your notebooks and should be listed in your requirements file:
+
+pandas: For data manipulation and reading CSV/Excel files.
+
+numpy: For numerical operations and array masking.
+
+scikit-learn (sklearn): For model selection, metrics, preprocessing, and classifiers like Logistic Regression, Random Forest, and SVM.
+
+imbalanced-learn (imblearn): Specifically for the SMOTE algorithm used to handle class imbalance.
+
+statsmodels: Used for statistical tests in the wrapper methods.
+
+gseapy: Used for Gene Set Enrichment Analysis (GSEA) in the final evaluation.
+
+openpyxl: Necessary for reading the Excel data file (LIHC_SampleStageFirst_GeneExpression_HGNC.xlsx).
+
+matplotlib/seaborn: (Implied) Used for generating plots and visualizations.
