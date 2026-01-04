@@ -1,0 +1,23 @@
+# Project Documentation
+
+## Architecture
+The project follows a standard machine learning pipeline:
+1. **Data Loading**: Reading transcriptomic data from CSV and Excel formats.
+2. **Preprocessing**:
+   - CPM (Counts Per Million) normalization for within-sample scaling.
+   - Handling missing values via median imputation.
+   - Dropping features with high missingness (>30%) or low variance (>90% zeros).
+3. **Feature Selection**:
+   - DESeq2-based significance filtering.
+   - Wrapper methods: RFECV (Recursive Feature Elimination with Cross-Validation).
+4. **Class Imbalance Handling**: Applied SMOTE to balance stages (Stage I, II, III).
+5. **Modeling**: Evaluation of Logistic Regression (ElasticNet), Linear SVM, RBF SVM, Random Forest, and Gradient Boosting.
+
+## Design Decisions
+- **Stage Consolidation**: To improve model stability, Stage IV samples were merged into Stage III due to low sample counts.
+- **Robust Evaluation**: Used Stratified K-Fold cross-validation to ensure the performance metrics are representative across imbalanced classes.
+
+## Algorithms
+- **SMOTE**: Used to generate synthetic samples for the minority Stage II and Stage III classes.
+- **RFECV**: Employed to identify the optimal subset of genes that maximize classification accuracy.
+- **ElasticNet**: Used in Logistic Regression to perform simultaneous regularization and feature selection.
